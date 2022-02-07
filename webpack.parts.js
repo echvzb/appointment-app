@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractWebpackPlugin = require('mini-css-extract-plugin');
 
 exports.loadTypescript = () => ({
   module: {
@@ -32,10 +33,15 @@ exports.loadCss = () => ({
       {
         test: /\.css$/i,
         include: path.join(__dirname, 'src'),
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: [
+          MiniCssExtractWebpackPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
       },
     ],
   },
+  plugins: [new MiniCssExtractWebpackPlugin()],
 });
 
 exports.devServer = () => ({
