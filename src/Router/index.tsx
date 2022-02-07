@@ -5,7 +5,7 @@ const Router = () => (
   <BrowserRouter>
     <Routes>
       {routes.map(([path, Element, props]) => (
-        <Route path={path} element={<Element {...props} />} />
+        <Route key={path} path={path} element={<Element {...props} />} />
       ))}
     </Routes>
   </BrowserRouter>
