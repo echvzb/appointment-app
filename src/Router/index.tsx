@@ -1,10 +1,12 @@
 import {Routes, BrowserRouter, Route} from 'react-router-dom';
-import {IndexPage} from './pages';
+import routes from './routes';
 
 const Router = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<IndexPage />} />
+      {routes.map(([path, Element, props]) => (
+        <Route key={path} path={path} element={<Element {...props} />} />
+      ))}
     </Routes>
   </BrowserRouter>
 );
