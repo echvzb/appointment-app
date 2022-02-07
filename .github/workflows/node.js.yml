@@ -1,0 +1,66 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  [pull_request]
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: lts/*
+        cache: yarn
+    - name: Install yarn
+      run: npm install yarn
+    - name: Lint
+      run: yarn lint
+
+  Build:
+    needs: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: lts/*
+        cache: yarn
+    - name: Install yarn
+      run: npm install yarn
+    - name: Install dependencies
+      run: yarn
+    - name: Build
+      run: yarn build
+    - uses: actions/upload-artifact@v2
+      with:
+        name: project-build
+        path: dist
+  Deploy:
+    needs: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download build
+      uses: actions/download-artifact@v2
+      with:
+        name: project-build
+        path: dist
+    - name: Deploy to Netlify
+      uses: nwtgck/actions-netlify@v1.2
+      with:
+        publish-dir: './dist'
+        production-branch: master
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: ${{ github.event.pull_request.title }}
+        alias: ${{ github.branch }}
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      timeout-minutes: 1
+
