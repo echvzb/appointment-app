@@ -5,7 +5,6 @@ const {
   devServer,
   loadHtml,
   eslint,
-  loadCss,
 } = require('./webpack.parts');
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
@@ -25,7 +24,6 @@ const commonConfig = ({mode}) =>
     },
     loadTypescript(),
     loadHtml(),
-    loadCss(),
   ]);
 
 const developmentConfig = () => merge([devServer(), eslint(extensions)]);
