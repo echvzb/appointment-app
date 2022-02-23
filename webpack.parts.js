@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 exports.loadTypescript = () => ({
   module: {
@@ -46,4 +47,17 @@ exports.loadHtml = () => ({
 
 exports.eslint = (extensions) => ({
   plugins: [new EslintWebpackPlugin({extensions})],
+});
+
+exports.copyFiles = () => ({
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './netlify.toml',
+          to: './netlify.toml',
+        },
+      ],
+    }),
+  ],
 });
