@@ -5,6 +5,7 @@ const {
   devServer,
   loadHtml,
   eslint,
+  copyFiles,
 } = require('./webpack.parts');
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
@@ -28,7 +29,7 @@ const commonConfig = ({mode}) =>
 
 const developmentConfig = () => merge([devServer(), eslint(extensions)]);
 
-const productionConfig = () => ({});
+const productionConfig = () => merge([copyFiles()]);
 
 module.exports = (env, arg) => {
   switch (arg.mode) {
