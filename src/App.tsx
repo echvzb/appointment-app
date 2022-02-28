@@ -1,5 +1,12 @@
 import Router from './Router';
+import {BaseWebProvider, AppContainer} from './BaseWeb';
 
-const App = () => <Router />;
+const App = () => (
+  <BaseWebProvider>
+    <AppContainer>
+      <Router />
+    </AppContainer>
+  </BaseWebProvider>
+);
 
 export default App;
