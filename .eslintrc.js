@@ -8,7 +8,6 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'plugin:baseui/recommended',
     'google',
   ],
   parser: '@typescript-eslint/parser',
@@ -19,11 +18,8 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'baseui'],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
     indent: ['error', 2],
-    'baseui/deprecated-theme-api': 'warn',
-    'baseui/deprecated-component-api': 'warn',
-    'baseui/no-deep-imports': 'warn',
   },
 };
