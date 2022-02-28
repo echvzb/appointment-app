@@ -1,12 +1,15 @@
-import Router from './Router';
 import {BaseWebProvider, AppContainer} from './BaseWeb';
+import {RequestProvider} from './request';
+import Router from './Router';
 
 const App = () => (
-  <BaseWebProvider>
-    <AppContainer>
-      <Router />
-    </AppContainer>
-  </BaseWebProvider>
+  <RequestProvider>
+    <BaseWebProvider>
+      <AppContainer>
+        <Router />
+      </AppContainer>
+    </BaseWebProvider>
+  </RequestProvider>
 );
 
 export default App;
