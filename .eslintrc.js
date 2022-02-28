@@ -18,8 +18,11 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'baseui'],
   rules: {
     indent: ['error', 2],
+    'baseui/deprecated-theme-api': 'warn',
+    'baseui/deprecated-component-api': 'warn',
+    'baseui/no-deep-imports': 'warn',
   },
 };
