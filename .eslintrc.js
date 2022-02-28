@@ -8,6 +8,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:baseui/recommended',
     'google',
   ],
   parser: '@typescript-eslint/parser',
