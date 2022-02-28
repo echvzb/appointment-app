@@ -1,12 +1,12 @@
 import Router from './Router';
-import {ThemeProvider} from 'styled-components';
-import {GlobalStyle, theme} from './style';
+import {BaseWebProvider, AppContainer} from './BaseWeb';
 
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Router />
-  </ThemeProvider>
+  <BaseWebProvider>
+    <AppContainer>
+      <Router />
+    </AppContainer>
+  </BaseWebProvider>
 );
 
 export default App;
