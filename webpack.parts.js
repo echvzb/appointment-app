@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 exports.loadTypescript = () => ({
   module: {
@@ -58,6 +59,14 @@ exports.copyFiles = () => ({
           to: './netlify.toml',
         },
       ],
+    }),
+  ],
+});
+
+exports.loadEnvVariables = (mode) => ({
+  plugins: [
+    new Dotenv({
+      path: path.join(__dirname, `.env.${mode}`),
     }),
   ],
 });
