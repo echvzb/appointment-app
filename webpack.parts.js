@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
-const MiniCssExtractWebpackPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 exports.loadTypescript = () => ({
   module: {
@@ -27,23 +28,6 @@ exports.loadTypescript = () => ({
   },
 });
 
-exports.loadCss = () => ({
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        include: path.join(__dirname, 'src'),
-        use: [
-          MiniCssExtractWebpackPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-        ],
-      },
-    ],
-  },
-  plugins: [new MiniCssExtractWebpackPlugin()],
-});
-
 exports.devServer = () => ({
   devServer: {
     port: 3000,
@@ -64,4 +48,25 @@ exports.loadHtml = () => ({
 
 exports.eslint = (extensions) => ({
   plugins: [new EslintWebpackPlugin({extensions})],
+});
+
+exports.copyFiles = () => ({
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './netlify.toml',
+          to: './netlify.toml',
+        },
+      ],
+    }),
+  ],
+});
+
+exports.loadEnvVariables = (mode) => ({
+  plugins: [
+    new Dotenv({
+      path: path.join(__dirname, `.env.${mode}`),
+    }),
+  ],
 });

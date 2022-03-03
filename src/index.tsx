@@ -1,5 +1,5 @@
 import {render} from 'react-dom';
 import App from './App';
-import './style.css';
+import 'babel-polyfill';
 
 render(<App />, document.querySelector('#app'));

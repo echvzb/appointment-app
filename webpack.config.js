@@ -5,7 +5,8 @@ const {
   devServer,
   loadHtml,
   eslint,
-  loadCss,
+  copyFiles,
+  loadEnvVariables,
 } = require('./webpack.parts');
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
@@ -25,14 +26,14 @@ const commonConfig = ({mode}) =>
     },
     loadTypescript(),
     loadHtml(),
-    loadCss(),
+    loadEnvVariables(mode),
   ]);
 
 const developmentConfig = () => merge([devServer(), eslint(extensions)]);
 
-const productionConfig = () => ({});
+const productionConfig = () => merge([copyFiles()]);
 
-module.exports = (env, arg) => {
+module.exports = (_env, arg) => {
   switch (arg.mode) {
     case 'production':
       return merge([commonConfig(arg), productionConfig()]);
