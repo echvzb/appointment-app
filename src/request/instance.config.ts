@@ -1,9 +1,11 @@
 import Axios from 'axios';
 
+const token = localStorage.getItem('token');
+
 export const http = Axios.create({
   baseURL: process.env.API_URL,
   headers: {
-    Authorization: `Bearer ${localStorage.getItem('token').replace(/"/g, '')}`,
+    Authorization: `Bearer ${token ? token.replace(/"/g, '') : ''}`,
   },
 });
 
