@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.1.0...v1.2.0) (2022-03-04)
+
+
+### Features
+
+* add devtool source map ([#21](https://github.com/educhavezbarreto/appointment-app/issues/21)) ([ccebe99](https://github.com/educhavezbarreto/appointment-app/commit/ccebe991ef381923486f93e8cc21e09e518d1735))
+* add simple navbar (web) ([#17](https://github.com/educhavezbarreto/appointment-app/issues/17)) ([9752476](https://github.com/educhavezbarreto/appointment-app/commit/97524760aabfd6d0854b0f953a86920681c1711f))
+* add simple navbar (web) ([#20](https://github.com/educhavezbarreto/appointment-app/issues/20)) ([be3140c](https://github.com/educhavezbarreto/appointment-app/commit/be3140cc6fbfcacd496cd4728bd4cdbfac71cea1))
+
 ## [1.1.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.0.1...v1.1.0) (2022-03-03)
 
 
