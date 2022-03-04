@@ -45,6 +45,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@mui/icons-material": "^5.4.4",
     "axios": "^0.26.0",
     "babel-polyfill": "^6.26.0",
     "baseui": "^10.9.2",
