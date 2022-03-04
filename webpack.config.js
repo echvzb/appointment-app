@@ -16,6 +16,7 @@ const commonConfig = ({mode}) =>
     {
       mode,
       entry: path.join(__dirname, 'src', 'index.tsx'),
+      devtool: 'source-map',
       resolve: {extensions},
       context: __dirname,
       optimization: {
