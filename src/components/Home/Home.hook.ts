@@ -2,7 +2,7 @@ import {useAtom} from 'jotai';
 import {currentThemeAtom, userAtom, setUserAtom, tokenAtom} from '../../state';
 import {useNavigate} from 'react-router-dom';
 
-export const useNavbar = () => {
+export const useHome = () => {
   const [currentTheme, setCurrentTheme] = useAtom(currentThemeAtom);
   const [, setUser] = useAtom(setUserAtom);
   const [user] = useAtom(userAtom);
@@ -20,8 +20,6 @@ export const useNavbar = () => {
 
   if (user.isAuthenticated) {
     return {
-      userName: user.name,
-      image: user.image,
       currentTheme,
       toggleTheme,
       buttonText: 'Logout',
@@ -29,8 +27,6 @@ export const useNavbar = () => {
     };
   }
   return {
-    userName: '',
-    image: '',
     currentTheme,
     toggleTheme,
     buttonText: 'Login',
