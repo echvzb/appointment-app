@@ -55,7 +55,7 @@ export const Navbar: FC<NavbarProps> = ({children}) => {
         })}
       >
         <Avatar
-          name={userName || ''}
+          name={userName}
           src={image}
           size="scale1200"
           overrides={{
