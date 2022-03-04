@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.1.0...v1.2.0) (2022-03-04)
+
+
+### Features
+
+* add simple navbar (web) ([#17](https://github.com/educhavezbarreto/appointment-app/issues/17)) ([9752476](https://github.com/educhavezbarreto/appointment-app/commit/97524760aabfd6d0854b0f953a86920681c1711f))
+
 ## [1.1.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.0.1...v1.1.0) (2022-03-03)
 
 
