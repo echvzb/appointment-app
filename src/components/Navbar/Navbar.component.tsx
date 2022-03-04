@@ -57,7 +57,7 @@ export const Navbar: FC<NavbarProps> = ({children}) => {
         <Avatar
           name={userName || ''}
           src={image}
-          size="scale1400"
+          size="scale1200"
           overrides={{
             Root: {
               style: ({$theme}) => ({
