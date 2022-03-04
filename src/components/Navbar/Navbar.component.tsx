@@ -30,7 +30,7 @@ export const Navbar: FC<NavbarProps> = ({children}) => {
     useNavbar();
   const [css, theme] = useStyletron();
   const navigate = useNavigate();
-  console.log(theme);
+
   return (
     <div>
       <div
