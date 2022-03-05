@@ -1,10 +1,10 @@
 import {useLogin} from './Login.hook';
-import {Button} from 'baseui/button';
+import GoogleButton from 'react-google-button';
 import {useStyletron} from 'baseui';
 
 export const Login = () => {
   const {loginWithGoogleHandler} = useLogin();
-  const [css] = useStyletron();
+  const [css, theme] = useStyletron();
   return (
     <div
       className={css({
@@ -14,7 +14,12 @@ export const Login = () => {
         justifyContent: 'center',
       })}
     >
-      <Button onClick={loginWithGoogleHandler}>Login with Google</Button>
+      <GoogleButton
+        onClick={loginWithGoogleHandler}
+        type={theme.name === 'light-theme' ? 'light' : 'dark'}
+      >
+        Login with Google
+      </GoogleButton>
     </div>
   );
 };
