@@ -96,7 +96,12 @@ export const Navbar: FC<NavbarProps> = ({children}) => {
               }}
             />
           )}
-          <Navlink onClick={() => navigate('/', {replace: true})}>
+          <Navlink
+            onClick={() => {
+              isOpen && toggleMenu();
+              navigate('/', {replace: true});
+            }}
+          >
             <Home />
           </Navlink>
           <div
@@ -108,7 +113,12 @@ export const Navbar: FC<NavbarProps> = ({children}) => {
             <Navlink onClick={toggleTheme}>
               {currentTheme === 'dark' ? <Moon /> : <Sun />}
             </Navlink>
-            <Navlink onClick={handleClick}>
+            <Navlink
+              onClick={() => {
+                isOpen && toggleMenu();
+                handleClick();
+              }}
+            >
               {buttonText === 'Logout' ? <LogOut /> : <LogIn />}
             </Navlink>
           </div>
