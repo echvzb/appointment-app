@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.2.0...v1.3.0) (2022-03-10)
+
+
+### Features
+
+* add google styled button ([228c74e](https://github.com/educhavezbarreto/appointment-app/commit/228c74e82d50c8fc0ed8546c39c6cb5ca4b90b29))
+* add responsive navbar with only icons ([#25](https://github.com/educhavezbarreto/appointment-app/issues/25)) ([5c0fb97](https://github.com/educhavezbarreto/appointment-app/commit/5c0fb971545b24584711cce5d86ff9d882f76e7e))
+* add users data table ([#24](https://github.com/educhavezbarreto/appointment-app/issues/24)) ([6130074](https://github.com/educhavezbarreto/appointment-app/commit/6130074a3ea832c99a6c9c72633155dba4a1305d))
+
 ## [1.2.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.1.0...v1.2.0) (2022-03-04)
 
 
