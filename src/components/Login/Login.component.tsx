@@ -8,7 +8,7 @@ export const Login = () => {
   return (
     <div
       className={css({
-        minHeight: '100vh',
+        minHeight: `calc(100vh - ${theme.sizing.scale1600})`,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
