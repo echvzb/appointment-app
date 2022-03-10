@@ -9,6 +9,7 @@ export const AppContainer: FC<{children: ReactElement}> = ({children}) => {
         minHeight: '100vh',
         backgroundColor: theme.colors.backgroundPrimary,
         transitionDuration: theme.animation.timing300,
+        overflow: 'auto',
       })}
     >
       {children}
