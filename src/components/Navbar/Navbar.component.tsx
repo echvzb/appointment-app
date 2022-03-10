@@ -36,6 +36,7 @@ export const Navbar: FC<NavbarProps> = ({children}) => {
       <div
         className={css({
           ['backgroundColor']: theme.colors.backgroundTertiary,
+          ['zIndex']: 1000,
           [theme.mediaQuery.medium]: {
             ['display']: 'flex',
             ['alignItems']: 'center',
@@ -46,6 +47,8 @@ export const Navbar: FC<NavbarProps> = ({children}) => {
             ['width']: '72px',
             ['maxWidth']: '256px',
             ['position']: 'fixed',
+            ['top']: 0,
+            ['left']: 0,
             ['height']: '100vh',
             ['boxShadow']: theme.lighting.shadow500,
             ':hover': {
