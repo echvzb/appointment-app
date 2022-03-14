@@ -14,7 +14,7 @@ export const useCalendar = () => {
     isLoading: isCalendarLoading,
   } = useQuery(
     'getCalendar',
-    () => getCalendar(userId, date[0].toISOString()),
+    () => getCalendar(userId, date[0].toISOString().slice(0, 10)),
     {enabled: false},
   );
   const [profile, setProfile] = useState<UserByIdInterface>(null);
