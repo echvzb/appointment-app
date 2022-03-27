@@ -1,7 +1,9 @@
 import {createContext, useState, FC} from 'react';
+import type {CalendarContextInterface} from './Calendar.types';
 
-export const CalendarContext = createContext({
+export const CalendarContext = createContext<CalendarContextInterface>({
   dateState: [],
+  timeState: [],
 });
 
 export const CalendarProvider: FC<{children: JSX.Element[] | JSX.Element}> = ({
@@ -11,6 +13,7 @@ export const CalendarProvider: FC<{children: JSX.Element[] | JSX.Element}> = ({
     <CalendarContext.Provider
       value={{
         dateState: useState([new Date()]),
+        timeState: useState(new Date()),
       }}
     >
       {children}
