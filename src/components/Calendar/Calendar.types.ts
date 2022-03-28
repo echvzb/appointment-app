@@ -8,5 +8,4 @@ export interface UserByIdInterface {
 
 export interface CalendarContextInterface {
   dateState: [Date[], Dispatch<Date[]>] | [];
-  timeState: [Date, Dispatch<Date>] | [];
 }

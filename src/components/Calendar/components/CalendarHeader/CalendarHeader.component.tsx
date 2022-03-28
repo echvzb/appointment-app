@@ -11,8 +11,7 @@ import {useCalendarHeader} from './CalendarHeader.hook';
 
 export const CalendarHeader = () => {
   const [css, theme] = useStyletron();
-  const {time, date, handleDateChange, handleTimeChange, calendarHeaderData} =
-    useCalendarHeader();
+  const {date, handleDateChange, calendarHeaderData} = useCalendarHeader();
   return (
     <>
       <div
@@ -62,7 +61,7 @@ export const CalendarHeader = () => {
           formatString="dd/MM/yyyy"
           minDate={new Date()}
         />
-        <TimePicker value={time} onChange={handleTimeChange} format="24" />
+        <TimePicker value={date[0]} onChange={handleDateChange} format="24" />
       </div>
       <div
         className={css({
