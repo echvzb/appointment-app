@@ -1,10 +1,11 @@
 import {useEffect, useState} from 'react';
-import {useQuery} from 'react-query';
-import {getConfig} from './Config.requests';
+import {useQuery, useMutation} from 'react-query';
+import {getConfig, updateConfig} from './Config.requests';
 import type {Config, HandleTimeZoneChange} from './Config.types';
 
 export const useConfig = () => {
-  const {data: config, isSuccess} = useQuery('getConfig', getConfig);
+  const {data: config, isSuccess, refetch} = useQuery('getConfig', getConfig);
+  const {mutateAsync, isLoading: isUpdateLoading} = useMutation(updateConfig);
   const [currentConfig, setCurrentConfig] = useState<Config>({timeZone: 'UTC'});
   const [updateDisabled, setUpdateDisabled] = useState(true);
   const handleTimeZoneChange = ({id}: HandleTimeZoneChange) => {
@@ -12,6 +13,13 @@ export const useConfig = () => {
       ...prevCurrentConfig,
       timeZone: id,
     }));
+  };
+  const handleUpdate = async () => {
+    try {
+      await mutateAsync(currentConfig);
+      refetch();
+      setUpdateDisabled(true);
+    } catch (error) {}
   };
   useEffect(() => {
     if (isSuccess) {
@@ -23,11 +31,6 @@ export const useConfig = () => {
   useEffect(() => {
     if (isSuccess) {
       for (const property of Object.keys(currentConfig)) {
-        console.log(
-          currentConfig[property],
-          config[property],
-          currentConfig[property] !== config[property],
-        );
         if (currentConfig[property] !== config[property]) {
           setUpdateDisabled(false);
           return;
@@ -36,5 +39,12 @@ export const useConfig = () => {
       setUpdateDisabled(true);
     }
   }, [currentConfig, isSuccess]);
-  return {currentConfig, isSuccess, updateDisabled, handleTimeZoneChange};
+  return {
+    currentConfig,
+    isSuccess,
+    updateDisabled,
+    handleTimeZoneChange,
+    isUpdateLoading,
+    handleUpdate,
+  };
 };

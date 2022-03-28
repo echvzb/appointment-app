@@ -6,8 +6,14 @@ import {Save} from 'react-feather';
 import {useConfig} from './Config.hook';
 
 export const Config = () => {
-  const {currentConfig, isSuccess, updateDisabled, handleTimeZoneChange} =
-    useConfig();
+  const {
+    currentConfig,
+    isSuccess,
+    updateDisabled,
+    handleTimeZoneChange,
+    handleUpdate,
+    isUpdateLoading,
+  } = useConfig();
   return (
     <>
       <HeadingMedium>Configuration</HeadingMedium>
@@ -23,7 +29,12 @@ export const Config = () => {
               onChange={handleTimeZoneChange}
             />
           </FormControl>
-          <Button startEnhancer={<Save />} disabled={updateDisabled}>
+          <Button
+            startEnhancer={<Save />}
+            disabled={updateDisabled}
+            isLoading={isUpdateLoading}
+            onClick={handleUpdate}
+          >
             Update
           </Button>
         </>
