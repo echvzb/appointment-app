@@ -1,3 +1,7 @@
 import {http} from '../../request';
 
-export const getConfig = () => http.get('/user/config');
+const configEndpoint = '/user/config';
+
+export const getConfig = () => http.get(configEndpoint);
+
+export const updateConfig = () => http.patch(configEndpoint);
