@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.3.0...v1.4.0) (2022-03-28)
+
+
+### Features
+
+* add appointment calendar ([#31](https://github.com/educhavezbarreto/appointment-app/issues/31)) ([ba62b5e](https://github.com/educhavezbarreto/appointment-app/commit/ba62b5e103f8448cf827db374da15aecefc45570))
+* add user calendar page ([#28](https://github.com/educhavezbarreto/appointment-app/issues/28)) ([7350e3a](https://github.com/educhavezbarreto/appointment-app/commit/7350e3ae1398640dd8c5c8894d0b71d2abdc767f))
+
 ## [1.3.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.2.0...v1.3.0) (2022-03-10)
 
 
