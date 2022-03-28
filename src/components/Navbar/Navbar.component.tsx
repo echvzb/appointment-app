@@ -5,7 +5,7 @@ import {Avatar} from 'baseui/avatar';
 import {useStyletron} from 'baseui';
 import {useNavbar} from './Navbar.hook';
 import {NavbarProps} from './Navbar.types';
-import {Moon, Sun, LogOut, LogIn, Home, Menu, X} from 'react-feather';
+import {Moon, Sun, LogOut, LogIn, Home, Menu, X, Settings} from 'react-feather';
 
 const Navlink: FC<ButtonProps> = ({children, ...restProps}) => {
   return (
@@ -110,6 +110,14 @@ export const Navbar: FC<NavbarProps> = ({children}) => {
               width: '100%',
             })}
           >
+            <Navlink
+              onClick={() => {
+                isOpen && toggleMenu();
+                navigate('/config', {replace: true});
+              }}
+            >
+              <Settings />
+            </Navlink>
             <Navlink onClick={toggleTheme}>
               {currentTheme === 'dark' ? <Moon /> : <Sun />}
             </Navlink>
