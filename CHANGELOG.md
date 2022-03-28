@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.4.0...v1.5.0) (2022-03-28)
+
+
+### Features
+
+* add config page ([#34](https://github.com/educhavezbarreto/appointment-app/issues/34)) ([f322d0c](https://github.com/educhavezbarreto/appointment-app/commit/f322d0cccde7b9af38803cb85c3736b6322ae039))
+
 ## [1.4.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.3.0...v1.4.0) (2022-03-28)
 
 
