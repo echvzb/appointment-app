@@ -22,9 +22,9 @@ export const useAuth = () => {
     if (isSuccess) {
       setUser({isAuthenticated: true, ...data});
     } else if (isError) {
-      setToken('');
+      setToken(null);
     }
-  }, [isSuccess, data]);
+  }, [isSuccess, data, isError]);
 
   return {isLoading};
 };
