@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.5.1](https://github.com/educhavezbarreto/appointment-app/compare/v1.5.0...v1.5.1) (2022-03-29)
+
+
+### Bug Fixes
+
+* add isError to useEffect dependency list ([#37](https://github.com/educhavezbarreto/appointment-app/issues/37)) ([f15de30](https://github.com/educhavezbarreto/appointment-app/commit/f15de302ed9175750d844bd5c0eacb299398efef))
+
 ## [1.5.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.4.0...v1.5.0) (2022-03-28)
 
 
