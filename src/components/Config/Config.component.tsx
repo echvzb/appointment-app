@@ -2,7 +2,9 @@ import {TimezonePicker} from 'baseui/datepicker';
 import {HeadingMedium, HeadingXSmall} from 'baseui/typography';
 import {FormControl} from 'baseui/form-control';
 import {Button} from 'baseui/button';
+import {Checkbox, STYLE_TYPE, LABEL_PLACEMENT} from 'baseui/checkbox';
 import {Save} from 'react-feather';
+import {useStyletron} from 'baseui';
 import {useConfig} from './Config.hook';
 
 export const Config = () => {
@@ -11,9 +13,11 @@ export const Config = () => {
     isSuccess,
     updateDisabled,
     handleTimeZoneChange,
+    handleIsBusinessAccountChange,
     handleUpdate,
     isUpdateLoading,
   } = useConfig();
+  const [css, theme] = useStyletron();
   return (
     <>
       <HeadingMedium>Configuration</HeadingMedium>
@@ -29,14 +33,28 @@ export const Config = () => {
               onChange={handleTimeZoneChange}
             />
           </FormControl>
-          <Button
-            startEnhancer={<Save />}
-            disabled={updateDisabled}
-            isLoading={isUpdateLoading}
-            onClick={handleUpdate}
+          <Checkbox
+            checked={currentConfig.isBusinessAccount}
+            checkmarkType={STYLE_TYPE.toggle_round}
+            labelPlacement={LABEL_PLACEMENT.right}
+            onChange={handleIsBusinessAccountChange}
           >
-            Update
-          </Button>
+            Business account
+          </Checkbox>
+          <div
+            className={css({
+              marginTop: theme.sizing.scale1200,
+            })}
+          >
+            <Button
+              startEnhancer={<Save />}
+              disabled={updateDisabled}
+              isLoading={isUpdateLoading}
+              onClick={handleUpdate}
+            >
+              Update
+            </Button>
+          </div>
         </>
       )}
     </>

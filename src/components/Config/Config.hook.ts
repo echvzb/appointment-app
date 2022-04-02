@@ -6,7 +6,10 @@ import type {Config, HandleTimeZoneChange} from './Config.types';
 export const useConfig = () => {
   const {data: config, isSuccess, refetch} = useQuery('getConfig', getConfig);
   const {mutateAsync, isLoading: isUpdateLoading} = useMutation(updateConfig);
-  const [currentConfig, setCurrentConfig] = useState<Config>({timeZone: 'UTC'});
+  const [currentConfig, setCurrentConfig] = useState<Config>({
+    timeZone: 'UTC',
+    isBusinessAccount: false,
+  });
   const [updateDisabled, setUpdateDisabled] = useState(true);
   const handleTimeZoneChange = ({id}: HandleTimeZoneChange) => {
     setCurrentConfig((prevCurrentConfig) => ({
@@ -14,6 +17,11 @@ export const useConfig = () => {
       timeZone: id,
     }));
   };
+  const handleIsBusinessAccountChange = () =>
+    setCurrentConfig((prevCurrentConfig) => ({
+      ...prevCurrentConfig,
+      isBusinessAccount: !prevCurrentConfig.isBusinessAccount,
+    }));
   const handleUpdate = async () => {
     try {
       await mutateAsync(currentConfig);
@@ -46,5 +54,6 @@ export const useConfig = () => {
     handleTimeZoneChange,
     isUpdateLoading,
     handleUpdate,
+    handleIsBusinessAccountChange,
   };
 };
