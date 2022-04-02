@@ -1,6 +1,6 @@
 export interface Config {
   timeZone: string;
-  isBusinessAccount: boolean
+  isBusinessAccount: boolean;
 }
 
 export interface HandleTimeZoneChange {
