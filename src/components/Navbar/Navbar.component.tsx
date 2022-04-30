@@ -5,7 +5,17 @@ import {Avatar} from 'baseui/avatar';
 import {useStyletron} from 'baseui';
 import {useNavbar} from './Navbar.hook';
 import {NavbarProps} from './Navbar.types';
-import {Moon, Sun, LogOut, LogIn, Home, Menu, X, Settings} from 'react-feather';
+import {
+  Coffee,
+  Moon,
+  Sun,
+  LogOut,
+  LogIn,
+  Home,
+  Menu,
+  X,
+  Settings,
+} from 'react-feather';
 
 const Navlink: FC<ButtonProps> = ({children, ...restProps}) => {
   return (
@@ -103,6 +113,14 @@ export const Navbar: FC<NavbarProps> = ({children}) => {
             }}
           >
             <Home />
+          </Navlink>
+          <Navlink
+            onClick={() => {
+              isOpen && toggleMenu();
+              navigate('/services', {replace: true});
+            }}
+          >
+            <Coffee />
           </Navlink>
           <div
             className={css({
