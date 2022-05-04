@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.5.1...v1.6.0) (2022-05-04)
+
+
+### Features
+
+* add business account config ([#40](https://github.com/educhavezbarreto/appointment-app/issues/40)) ([f5129da](https://github.com/educhavezbarreto/appointment-app/commit/f5129dad7d5b8c2e07cfeee884f9ddf9d0933884))
+
 ### [1.5.1](https://github.com/educhavezbarreto/appointment-app/compare/v1.5.0...v1.5.1) (2022-03-29)
 
 
