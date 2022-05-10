@@ -22,7 +22,7 @@ export const NewService = () => {
         onClick={handleSubmit}
         disabled={!(newService.name && newService.timeInMinutes > 0)}
       >
-        Crear
+        Create
       </Button>
     </>
   );
