@@ -4,3 +4,5 @@ export * from './Auth';
 export * from './Home';
 export * from './Calendar';
 export * from './Config';
+export * from './Services';
+export * from './NewService';
