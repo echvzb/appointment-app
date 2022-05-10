@@ -5,6 +5,7 @@ import {
   CalendarPage,
   ConfigPage,
   ServicesPage,
+  NewServicePage,
 } from '../pages';
 
 const routes: RouteType[] = [
@@ -13,6 +14,7 @@ const routes: RouteType[] = [
   ['/config', ConfigPage],
   ['/calendar/:userId', CalendarPage],
   ['/services', ServicesPage],
+  ['/services/new', NewServicePage],
 ];
 
 export default routes;
