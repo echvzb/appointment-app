@@ -23,7 +23,7 @@ export const Services = () => {
             })}
           >
             <HeadingMedium>Registered services.</HeadingMedium>
-            <Button onClick={() => navigate('/services/new')}>Crear</Button>
+            <Button onClick={() => navigate('/services/new')}>New</Button>
           </div>
           <div
             className={css({
