@@ -11,13 +11,6 @@ export const mutationCache = new MutationCache();
 export const queryClient = new QueryClient({
   queryCache,
   mutationCache,
-  defaultOptions: {
-    queries: {
-      refetchOnMount: false,
-      refetchOnReconnect: false,
-      refetchOnWindowFocus: false,
-    },
-  },
 });
 
 export const RequestProvider: FC<{children: ReactElement}> = ({children}) => {
