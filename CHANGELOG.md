@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.6.0...v1.7.0) (2022-05-10)
+
+
+### Features
+
+* add services ([#41](https://github.com/educhavezbarreto/appointment-app/issues/41)) ([47a11a9](https://github.com/educhavezbarreto/appointment-app/commit/47a11a9d8180eed9348452ac88de1c25e27ff9f9))
+
 ## [1.6.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.5.1...v1.6.0) (2022-05-04)
 
 
