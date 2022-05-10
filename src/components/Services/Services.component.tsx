@@ -4,10 +4,11 @@ import {HeadingMedium} from 'baseui/typography';
 import {useStyletron} from 'baseui';
 import {useNavigate} from 'react-router-dom';
 import {useServices} from './Services.hook';
-import {Button} from 'baseui/button';
+import {Button, KIND} from 'baseui/button';
+import {Trash} from 'react-feather';
 
 export const Services = () => {
-  const {isAuthenticated, services, isSuccess} = useServices();
+  const {isAuthenticated, services, isSuccess, handleDelete} = useServices();
   const [css, theme] = useStyletron();
   const navigate = useNavigate();
   return (
@@ -41,9 +42,18 @@ export const Services = () => {
                     </StyledLink>
                   )}
                 </TableBuilderColumn>
-
                 <TableBuilderColumn header="Time in minutes">
                   {({timeInMinutes}) => timeInMinutes}
+                </TableBuilderColumn>
+                <TableBuilderColumn header="">
+                  {({_id}) => (
+                    <Button
+                      kind={KIND.tertiary}
+                      onClick={() => handleDelete(_id)}
+                    >
+                      <Trash />
+                    </Button>
+                  )}
                 </TableBuilderColumn>
               </TableBuilder>
             )}
