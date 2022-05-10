@@ -19,7 +19,7 @@ export const CalendarAppointmentTime: FC<CalendarAppointmentTimeProps> = ({
         justifyContent: 'center',
         backgroundColor: theme.colors.backgroundLightNegative,
         gridColumn: day + 2,
-        gridRow: `${startTimeInMinutes} / span ${totalTimeInMinutes} `,
+        gridRow: `${startTimeInMinutes || 2} / span ${totalTimeInMinutes} `,
       })}
     >
       <ParagraphXSmall>{timeInterval}</ParagraphXSmall>

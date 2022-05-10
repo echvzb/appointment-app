@@ -11,3 +11,14 @@ export const getUserById = (
 export const getCalendar = (userId: string, date: string) => {
   return http.get(`/calendar/${userId}`, {params: {date}});
 };
+
+export const createEvent = ({
+  userId,
+  ...data
+}: {
+  userId: string;
+  serviceId: string;
+  date: string;
+}) => {
+  return http.post(`/calendar/${userId}/event`, data);
+};
