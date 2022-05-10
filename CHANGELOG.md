@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.7.0...v1.8.0) (2022-05-10)
+
+
+### Features
+
+* add create event given a service ([#46](https://github.com/educhavezbarreto/appointment-app/issues/46)) ([b5c8134](https://github.com/educhavezbarreto/appointment-app/commit/b5c81348119317c3143e4f9668fbf5db405cdc0f))
+
+
+### Bug Fixes
+
+* remove query defaults ([#47](https://github.com/educhavezbarreto/appointment-app/issues/47)) ([d2e1898](https://github.com/educhavezbarreto/appointment-app/commit/d2e18986387401ef4004db920bbcfa080afe9300))
+
 ## [1.7.0](https://github.com/educhavezbarreto/appointment-app/compare/v1.6.0...v1.7.0) (2022-05-10)
 
 
